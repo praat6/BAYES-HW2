@@ -1,0 +1,12 @@
+model {for (i in 1:N){ 
+                y[i] ~ dnorm(y.hat[i], tau)
+                y.hat[i] <- theta0 + theta1 * x1[i] + theta2 * x2[i] 
+                }
+            
+            theta0 ~ dnorm(-385.18,1/19.46) 
+            theta1 ~ dnorm(0.26,1/0.006)
+            theta2 ~ dnorm(-7.66,1/0.385)
+            tau <- pow(sigma, -2)
+            sigma ~ dgamma(100,1)  
+            balance.pred ~ dnorm(239.19, tau)
+            } 
