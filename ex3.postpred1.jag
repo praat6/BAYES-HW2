@@ -9,4 +9,5 @@ model {for (i in 1:N){
             tau <- pow(sigma, -2)
             sigma ~ dgamma(100,1)  
             balance.pred ~ dnorm(181.13, tau)
+            balance.pred.student ~ dnorm(585.54, tau)
             } 
